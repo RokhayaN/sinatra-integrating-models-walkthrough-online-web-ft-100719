@@ -6,10 +6,10 @@ class App < Sinatra::Base
     erb :index
   end
 
-  post '/' do
-     @analyzed_text = TextAnalyzer.new(params[:user_text])
-     # text_from_user = params[:user_text]
-  # @analyzed_text = TextAnalyzer.new(text_from_user)	  # @analyzed_text = TextAnalyzer.new(text_from_user)
-    erb:results
+ post '/' do
+  @text = TextAnalyzer.new(params[:user_text]) #shortened
+  # text_from_user = params[:user_text]
+  # @analyzed_text = TextAnalyzer.new(text_from_user)
+  erb :results
   end
 end
